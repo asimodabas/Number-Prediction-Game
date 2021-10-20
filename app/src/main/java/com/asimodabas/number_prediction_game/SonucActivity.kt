@@ -10,6 +10,18 @@ class SonucActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sonuc)
 
+        val sonuc = intent.getBooleanExtra("sonuc",false)
+
+        if (sonuc==true){
+        textViewSonuc.text="KAZANDINIZ"
+        imageViewSonuc.setImageResource(R.drawable.mutlu_resim)
+        }
+        else{
+            textViewSonuc.text="KAYBETTİNİZ"
+            imageViewSonuc.setImageResource(R.drawable.uzgun_resim_24)
+
+        }
+
         buttonTekrar.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             finish()
